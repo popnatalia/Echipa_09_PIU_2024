@@ -1,0 +1,23 @@
+
+body, html {
+    height: 100%;  /* Make sure the body and html elements take up full height */
+    margin: 0;     /* Remove default margin */
+}
+
+.home-container {
+    display: flex;              /* Enable flexbox layout */
+    justify-content: center;    /* Horizontally center the content */
+    align-items: center;        /* Vertically center the content */
+    height: 100vh;              /* Take full viewport height */
+    text-align: center;         /* Center the text inside the container */
+}
+
+.content {
+    text-align: center;
+}
+
+button {
+    margin: 10px;               /* Add spacing between buttons */
+    padding: 10px 20px;         /* Add padding to buttons */
+    font-size: 16px;            /* Set button text size */
+}
