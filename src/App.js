@@ -4,6 +4,7 @@ import SignIn from './login-register/SingIn';
 import Register from './login-register/Register';
 import Home from "./home/Home";
 import Alerts from "./alerts/Alerts";
+import CaseManagement from "./case-management/CaseManagement"
 
 const App = () => {
     const defaultRoute = window.location.pathname === '/' ? <Redirect to="/home"/> : undefined;
@@ -14,6 +15,8 @@ const App = () => {
                 <Route exact path="/signin" element={SignIn} />
                 <Route exact path="/register" element={Register} />
                 <Route exact path="/alerts" element={<Alerts/>} />
+                <Route exact path="/alerts-and-notifications" element={<Alerts/>} />
+                <Route exact path="/case-management" element={<CaseManagement/>} />
             </Switch>
             {defaultRoute}
         </Router>
