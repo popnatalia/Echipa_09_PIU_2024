@@ -23,22 +23,17 @@ import { useNavigate } from 'react-router-dom';
 const Alerts = () => {
   const navigate = useNavigate();
 
-  // State to manage alerts and their associated person
   const [alerts, setAlerts] = useState([]);
 
-  // States for the popup
   const [open, setOpen] = useState(false);
   const [newAlert, setNewAlert] = useState('');
   const [selectedPerson, setSelectedPerson] = useState('');
 
-  // Example list of people (this could come from an API)
   const people = ['John Doe', 'Jane Smith', 'Alice Johnson', 'Bob Brown'];
 
-  // State for First Aid Guidelines
   const [isEditing, setIsEditing] = useState(false);
   const [firstAidText, setFirstAidText] = useState('First aid guidelines'); // Default guidelines
 
-  // Open and close the popup
   const handleOpen = () => setOpen(true);
   const handleClose = () => {
     setOpen(false);
@@ -46,7 +41,6 @@ const Alerts = () => {
     setSelectedPerson('');
   };
 
-  // Add a new alert with a selected person
   const handleAddAlert = () => {
     if (newAlert.trim() && selectedPerson) {
       setAlerts([...alerts, { text: newAlert, person: selectedPerson, done: false }]);
@@ -54,7 +48,6 @@ const Alerts = () => {
     }
   };
 
-  // Toggle "done" status
   const handleToggle = (index) => {
     const updatedAlerts = alerts.map((alert, i) =>
       i === index ? { ...alert, done: !alert.done } : alert
@@ -63,12 +56,11 @@ const Alerts = () => {
     setAlerts(updatedAlerts);
   };
 
-  // Navigate to monitoring page
   const handleMonitor = (person) => {
-    navigate(`/monitor/${encodeURIComponent(person)}`);
+    //navigate(`/monitor/${encodeURIComponent(person)}`);
+    console.log(`/monitor/${encodeURIComponent(person)}`);
   };
 
-  // Toggle editing mode for First Aid Guidelines
   const handleEditToggle = () => setIsEditing(!isEditing);
   const handleFirstAidChange = (e) => setFirstAidText(e.target.value);
 
