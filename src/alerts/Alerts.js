@@ -62,7 +62,7 @@ const Alerts = () => {
     const handleFirstAidChange = (e) => setFirstAidText(e.target.value);
 
     return (
-        <Box sx={{ padding: 2, backgroundColor: 'white', minHeight: '100vh' }}>
+        <Box sx={{ padding: 1, backgroundColor: 'white', minHeight: '100vh' }}>
             <Navbar currentPage="Alerts and Notifications" />
             {/* Header Section */}
             <Box sx={{ textAlign: 'center', marginTop: 6, marginBottom: 2 }}>
