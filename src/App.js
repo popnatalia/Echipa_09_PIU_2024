@@ -6,6 +6,7 @@ import CaseManagement from "./case-management/CaseManagement"
 import SignInPage from "./login-register/SignIn";
 import RegisterPage from "./login-register/Register";
 import Dashboard from "./dashboard/Dashboard";
+import HealthMonitoring from "./health-monitoring/HealthMonitoring";
 
 const App = () => {
     const defaultRoute = window.location.pathname === '/' ? <Redirect to="/home"/> : undefined;
@@ -18,6 +19,7 @@ const App = () => {
                 <Route exact path="/alerts-and-notifications" element={<Alerts/>} />
                 <Route exact path="/case-management" element={<CaseManagement/>} />
                 <Route exact path="/dashboard" element={<Dashboard/>} />
+                <Route exact path="/health-monitoring" element={<HealthMonitoring/>} />
                 <Route exact path={"/log-out"} element={<Redirect to="/home"/>} />
             </Switch>
             {defaultRoute}

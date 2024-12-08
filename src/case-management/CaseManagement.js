@@ -75,7 +75,7 @@ const CaseManagement = () => {
     const navigate = useNavigate();
 
     return (
-        <Box sx={{ padding: 2, backgroundColor: 'white', minHeight: '100vh' }}>
+        <Box sx={{ padding: 1, backgroundColor: 'white', minHeight: '100vh' }}>
             <Navbar currentPage="Case Management" />
             <Container>
                 {/* Header */}
