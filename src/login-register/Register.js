@@ -34,7 +34,7 @@ const RegisterPage = () => {
         <Container component="main" maxWidth="xs">
             <Paper elevation={3} sx={{ marginTop: 8, padding: 4 }}>
                 <Box display="flex" flexDirection="column" alignItems="center">
-                    <Avatar sx={{ bgcolor: 'primary.main' }}>
+                    <Avatar sx={{ bgcolor: 'secondary.main' }}>
                         <HowToRegIcon />
                     </Avatar>
                     <Typography component="h1" variant="h5" sx={{ marginTop: 1 }}>
@@ -76,7 +76,7 @@ const RegisterPage = () => {
                             type="submit"
                             fullWidth
                             variant="contained"
-                            sx={{ mt: 3, mb: 2 }}
+                            sx={{ mt: 3, mb: 2, bgcolor: '#6B48AD', color: '#fff' }}
                         >
                             Register
                         </Button>
