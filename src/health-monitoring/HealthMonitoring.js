@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import Navbar from "../navbar/Navbar";
 import {
     Box,
@@ -17,12 +17,12 @@ import {
     TextField,
     Typography,
 } from "@mui/material";
-import { Delete as DeleteIcon } from "@mui/icons-material";
+import {Delete as DeleteIcon} from "@mui/icons-material";
 import PhoneInTalkOutlinedIcon from '@mui/icons-material/PhoneInTalkOutlined';
 import AnnouncementOutlinedIcon from '@mui/icons-material/AnnouncementOutlined';
 import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import HealthGraph from "./HealthGraph";
-import { ToastContainer, toast } from 'react-toastify';
+import {toast, ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const HealthMonitoring = () => {
@@ -76,8 +76,8 @@ const HealthMonitoring = () => {
 
     if (!selectedUser) {
         return (
-            <Box sx={{ padding: 2, backgroundColor: "#f3f2f5", minHeight: "100vh" }}>
-                <Navbar currentPage="Health Monitoring" />
+            <Box sx={{padding: 1, minHeight: "100vh"}}>
+                <Navbar currentPage="Health Monitoring"/>
                 <Dialog
                     open={openDialog}
                     disableEscapeKeyDown
@@ -94,7 +94,7 @@ const HealthMonitoring = () => {
                         },
                     }}
                 >
-                    <DialogTitle sx={{ color: "#6B48AD" }}>Select a User</DialogTitle>
+                    <DialogTitle sx={{color: "#6B48AD"}}>Select a User</DialogTitle>
                     <DialogContent>
                         <FormControl fullWidth margin="normal">
                             <InputLabel>Select User</InputLabel>
@@ -124,8 +124,8 @@ const HealthMonitoring = () => {
     }
 
     return (
-        <Box sx={{ padding: 2, backgroundColor: "#f3f2f5", minHeight: "100vh" }}>
-            <Navbar currentPage="Health Monitoring" />
+        <Box sx={{padding: 1, minHeight: "100vh"}}>
+            <Navbar currentPage="Health Monitoring"/>
             <Box
                 sx={{
                     position: "fixed",
@@ -154,7 +154,7 @@ const HealthMonitoring = () => {
                     }}
                     onClick={() => handleIconClick('phone')}
                 >
-                    <PhoneInTalkOutlinedIcon sx={{ fontSize: 24 }} />
+                    <PhoneInTalkOutlinedIcon sx={{fontSize: 24}}/>
                 </IconButton>
                 <IconButton
                     sx={{
@@ -168,7 +168,7 @@ const HealthMonitoring = () => {
                     }}
                     onClick={() => handleIconClick('announcement')}
                 >
-                    <AnnouncementOutlinedIcon sx={{ fontSize: 24 }} />
+                    <AnnouncementOutlinedIcon sx={{fontSize: 24}}/>
                 </IconButton>
                 <IconButton
                     sx={{
@@ -182,18 +182,24 @@ const HealthMonitoring = () => {
                     }}
                     onClick={() => handleIconClick('support')}
                 >
-                    <SupportAgentIcon sx={{ fontSize: 24 }} />
+                    <SupportAgentIcon sx={{fontSize: 24}}/>
                 </IconButton>
             </Box>
 
-            <Box sx={{ padding: 2 }}>
-                <Typography variant="h4" sx={{ color: "#6B48AD", fontWeight: "bold", marginTop: 4 }}>
+            <Box sx={{padding: 2}}>
+                <Typography variant="h4" sx={{
+                    color: "#6B48AD",
+                    fontWeight: "bold",
+                    marginTop: 4,
+                    textAlign: 'center',
+                    width: '100%',
+                }}>
                     Monitoring for {selectedUser}
                 </Typography>
-                <HealthGraph />
-                <Box sx={{ marginTop: 3, backgroundColor: "#fff", padding: 3, borderRadius: "12px", boxShadow: 2 }}>
-                    <Typography variant="h6" sx={{ color: "#6B48AD" }}>Patient Info</Typography>
-                    <Box sx={{ display: "flex", flexDirection: "column", gap: 2, marginTop: 2 }}>
+                <HealthGraph/>
+                <Box sx={{marginTop: 3, backgroundColor: "#fff", padding: 3, borderRadius: "12px", boxShadow: 2}}>
+                    <Typography variant="h6" sx={{color: "#6B48AD"}}>Patient Info</Typography>
+                    <Box sx={{display: "flex", flexDirection: "column", gap: 2, marginTop: 2}}>
                         <TextField
                             label="New information to add to patient's profile"
                             variant="outlined"
@@ -228,8 +234,8 @@ const HealthMonitoring = () => {
                         </Button>
                         <List>
                             {interventions.map((intervention, index) => (
-                                <ListItem key={index} sx={{ display: "flex", alignItems: "center" }}>
-                                    <ListItemText primary={intervention} />
+                                <ListItem key={index} sx={{display: "flex", alignItems: "center"}}>
+                                    <ListItemText primary={intervention}/>
                                     <IconButton
                                         edge="end"
                                         onClick={() => handleRemoveIntervention(index)}
@@ -240,7 +246,7 @@ const HealthMonitoring = () => {
                                             },
                                         }}
                                     >
-                                        <DeleteIcon />
+                                        <DeleteIcon/>
                                     </IconButton>
                                 </ListItem>
                             ))}
@@ -249,7 +255,7 @@ const HealthMonitoring = () => {
                 </Box>
             </Box>
 
-            <ToastContainer />
+            <ToastContainer/>
         </Box>
     );
 };

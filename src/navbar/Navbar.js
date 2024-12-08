@@ -8,7 +8,7 @@ const Navbar = ({currentPage}) => {
         'Health Monitoring',
         'Alerts and Notifications',
         'Case Management',
-        'Reporting',
+        'Reports and Feedback',
         'Training Events',
         'Log out',
     ];

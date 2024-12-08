@@ -30,11 +30,15 @@ const SignInPage = () => {
             username === accounts.admin.username &&
             password === accounts.admin.password
         ) {
+            sessionStorage.setItem('role', 'admin')
+            sessionStorage.setItem('username', 'Admin')
             navigate('/dashboard')
         } else if (
             username === accounts.user.username &&
             password === accounts.user.password
         ) {
+            sessionStorage.setItem('role', 'user')
+            sessionStorage.setItem('username', 'User')
             navigate('/dashboard');
         } else {
             setError('Invalid username or password');
@@ -79,7 +83,7 @@ const SignInPage = () => {
                             type="submit"
                             fullWidth
                             variant="contained"
-                            sx={{ mt: 3, mb: 2 }}
+                            sx={{ mt: 3, mb: 2, bgcolor: '#6B48AD', color: '#fff'}}
                         >
                             Sign In
                         </Button>
