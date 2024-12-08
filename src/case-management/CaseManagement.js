@@ -90,7 +90,7 @@ const CaseManagement = () => {
                 <Box sx={{ textAlign: 'center', marginY: 4 }}>
                     <Button
                         variant="contained"
-                        color="primary"
+                        sx={{bgcolor: '#6B48AD', color: "#fff" }}
                         onClick={() => setOpenAddDialog(true)}
                     >
                         Create new case

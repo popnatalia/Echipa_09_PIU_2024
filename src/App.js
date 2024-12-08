@@ -1,10 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Navigate as Redirect, Routes as Switch} from 'react-router-dom';
-import SignIn from './login-register/SingIn';
-import Register from './login-register/Register';
 import Home from "./home/Home";
 import Alerts from "./alerts/Alerts";
 import CaseManagement from "./case-management/CaseManagement"
+import SignInPage from "./login-register/SignIn";
+import RegisterPage from "./login-register/Register";
+import Dashboard from "./dashboard/Dashboard";
 
 const App = () => {
     const defaultRoute = window.location.pathname === '/' ? <Redirect to="/home"/> : undefined;
@@ -12,11 +13,12 @@ const App = () => {
         <Router>
             <Switch>
                 <Route exact path="/home" element={<Home/>} />
-                <Route exact path="/signin" element={SignIn} />
-                <Route exact path="/register" element={Register} />
-                <Route exact path="/alerts" element={<Alerts/>} />
+                <Route exact path="/signin" element={<SignInPage/>} />
+                <Route exact path="/register" element={<RegisterPage/>} />
                 <Route exact path="/alerts-and-notifications" element={<Alerts/>} />
                 <Route exact path="/case-management" element={<CaseManagement/>} />
+                <Route exact path="/dashboard" element={<Dashboard/>} />
+                <Route exact path={"/log-out"} element={<Redirect to="/home"/>} />
             </Switch>
             {defaultRoute}
         </Router>

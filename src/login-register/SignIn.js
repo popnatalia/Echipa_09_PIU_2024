@@ -8,25 +8,36 @@ import {
     Box,
     Paper,
 } from '@mui/material';
-import HowToRegIcon from '@mui/icons-material/HowToReg';
-import { useNavigate } from 'react-router-dom';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import {useNavigate} from "react-router-dom";
 
-const RegisterPage = () => {
+const accounts = {
+    admin: { username: 'admin', password: 'admin123', role: 'admin' },
+    user: { username: 'user', password: 'user123', role: 'user' },
+};
+
+const SignInPage = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('');
-    const navigate = useNavigate();
+
+    const navigate = useNavigate()
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (!username || !password || !confirmPassword) {
-            setError('Please fill out all fields.');
-        } else if (password !== confirmPassword) {
-            setError('Passwords do not match.');
+
+        if (
+            username === accounts.admin.username &&
+            password === accounts.admin.password
+        ) {
+            navigate('/dashboard')
+        } else if (
+            username === accounts.user.username &&
+            password === accounts.user.password
+        ) {
+            navigate('/dashboard');
         } else {
-            // Redirect to Welcome Page
-            navigate('/welcome');
+            setError('Invalid username or password');
         }
     };
 
@@ -34,11 +45,11 @@ const RegisterPage = () => {
         <Container component="main" maxWidth="xs">
             <Paper elevation={3} sx={{ marginTop: 8, padding: 4 }}>
                 <Box display="flex" flexDirection="column" alignItems="center">
-                    <Avatar sx={{ bgcolor: 'primary.main' }}>
-                        <HowToRegIcon />
+                    <Avatar sx={{ bgcolor: 'secondary.main' }}>
+                        <LockOutlinedIcon />
                     </Avatar>
                     <Typography component="h1" variant="h5" sx={{ marginTop: 1 }}>
-                        Register
+                        Sign in
                     </Typography>
                     <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>
                         <TextField
@@ -48,6 +59,7 @@ const RegisterPage = () => {
                             label="Username"
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
+                            autoFocus
                         />
                         <TextField
                             margin="normal"
@@ -57,15 +69,6 @@ const RegisterPage = () => {
                             type="password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
-                        />
-                        <TextField
-                            margin="normal"
-                            required
-                            fullWidth
-                            label="Confirm Password"
-                            type="password"
-                            value={confirmPassword}
-                            onChange={(e) => setConfirmPassword(e.target.value)}
                         />
                         {error && (
                             <Typography color="error" variant="body2">
@@ -78,7 +81,7 @@ const RegisterPage = () => {
                             variant="contained"
                             sx={{ mt: 3, mb: 2 }}
                         >
-                            Register
+                            Sign In
                         </Button>
                     </Box>
                 </Box>
@@ -87,4 +90,4 @@ const RegisterPage = () => {
     );
 };
 
-export default RegisterPage;
+export default SignInPage;

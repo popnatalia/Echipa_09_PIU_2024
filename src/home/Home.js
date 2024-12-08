@@ -1,20 +1,17 @@
 import React from 'react';
-import history from '../history';
 import { useNavigate } from 'react-router-dom';
 import { Box, Button, Typography, Container } from '@mui/material';
 
 const Home = () => {
-    //const history = useNavigate();
+    const history = useNavigate();
 
     const handleSignIn = () => {
-        // history('/signin');
-        history.push('/alerts');
+        history('/signin');
         window.location.reload();
     };
 
     const handleRegister = () => {
-        // history('/register');
-        history.push('/alerts');
+        history('/register');
         window.location.reload();
     };
 

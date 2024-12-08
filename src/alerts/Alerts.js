@@ -73,7 +73,7 @@ const Alerts = () => {
 
             {/* Create New Alert Button */}
             <Box sx={{ display: 'flex', justifyContent: 'center', marginBottom: 4 }}>
-                <Button variant="contained" color="primary" onClick={handleOpen}>
+                <Button variant="contained" sx={{bgcolor: '#6B48AD', color: "#fff"}} onClick={handleOpen}>
                     Create new alert
                 </Button>
             </Box>
@@ -123,16 +123,15 @@ const Alerts = () => {
             </Box>
 
             {/* First Aid Guidelines Section */}
-            <Box sx={{ marginTop: 4 }}>
+            <Box sx={{ marginTop: 4, paddingRight: 4 }}>
                 <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 2 }}>
                     <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
                         First Aid Guidelines
                     </Typography>
                     <Button
                         variant="outlined"
-                        color="primary"
                         onClick={handleEditToggle}
-                        sx={{ marginLeft: 'auto' }}
+                        sx={{ marginLeft: 'auto', bgcolor: '#6B48AD', color: "#fff" }}
                     >
                         {isEditing ? 'Save' : 'Edit'}
                     </Button>
