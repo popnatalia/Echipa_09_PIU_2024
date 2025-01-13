@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import WelcomePage from "./WelcomePage";
 import {
     Avatar,
     Button,
